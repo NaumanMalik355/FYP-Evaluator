@@ -30,5 +30,17 @@ namespace ProjectA
             this.Hide();
             d.Show();
         }
+
+        private void btnAddProject_Click(object sender, EventArgs e)
+        {
+            try {
+                string query = string.Format("insert into Project(Description,Title) values('{0}','{1}')", rtBoxDescription.Text, txtTitle.Text);
+                DatabaseConnection.getInstance().executeQuery(query);
+                MessageBox.Show("Data Inserted Successfully...");
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error "+ex.Message);
+            }
+        }
     }
 }

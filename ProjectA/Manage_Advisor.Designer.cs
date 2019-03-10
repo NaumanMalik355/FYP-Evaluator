@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.advisorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectADataSet3 = new ProjectA.ProjectADataSet3();
             this.advisorTableAdapter = new ProjectA.ProjectADataSet3TableAdapters.AdvisorTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comDesignation = new System.Windows.Forms.ComboBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.btnAddAdvisor = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advisorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectADataSet3)).BeginInit();
@@ -59,32 +59,11 @@
             this.salaryDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.advisorBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 198);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(432, 163);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // designationDataGridViewTextBoxColumn
-            // 
-            this.designationDataGridViewTextBoxColumn.DataPropertyName = "Designation";
-            this.designationDataGridViewTextBoxColumn.HeaderText = "Designation";
-            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
-            this.designationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // advisorBindingSource
             // 
@@ -103,7 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 60);
+            this.label1.Location = new System.Drawing.Point(70, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
@@ -112,41 +91,42 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 104);
+            this.label2.Location = new System.Drawing.Point(97, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Salary";
             // 
-            // comboBox1
+            // comDesignation
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comDesignation.FormattingEnabled = true;
+            this.comDesignation.Items.AddRange(new object[] {
             "Professor",
             "Associate Professor",
             "Assisstant Professor",
             "Lecturer",
             "Industry Professional"});
-            this.comboBox1.Location = new System.Drawing.Point(167, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 21);
-            this.comboBox1.TabIndex = 4;
+            this.comDesignation.Location = new System.Drawing.Point(178, 74);
+            this.comDesignation.Name = "comDesignation";
+            this.comDesignation.Size = new System.Drawing.Size(161, 21);
+            this.comDesignation.TabIndex = 4;
             // 
-            // textBox1
+            // txtSalary
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtSalary.Location = new System.Drawing.Point(178, 113);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(161, 20);
+            this.txtSalary.TabIndex = 5;
             // 
-            // button1
+            // btnAddAdvisor
             // 
-            this.button1.Location = new System.Drawing.Point(246, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Add Advisor";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddAdvisor.Location = new System.Drawing.Point(257, 149);
+            this.btnAddAdvisor.Name = "btnAddAdvisor";
+            this.btnAddAdvisor.Size = new System.Drawing.Size(82, 27);
+            this.btnAddAdvisor.TabIndex = 6;
+            this.btnAddAdvisor.Text = "Add Advisor";
+            this.btnAddAdvisor.UseVisualStyleBackColor = true;
+            this.btnAddAdvisor.Click += new System.EventHandler(this.btnAddAdvisor_Click);
             // 
             // button2
             // 
@@ -158,15 +138,37 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // designationDataGridViewTextBoxColumn
+            // 
+            this.designationDataGridViewTextBoxColumn.DataPropertyName = "Designation";
+            this.designationDataGridViewTextBoxColumn.HeaderText = "Designation";
+            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
+            this.designationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            this.salaryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Manage_Advisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 354);
+            this.ClientSize = new System.Drawing.Size(432, 361);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnAddAdvisor);
+            this.Controls.Add(this.txtSalary);
+            this.Controls.Add(this.comDesignation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -187,14 +189,14 @@
         private ProjectADataSet3 projectADataSet3;
         private System.Windows.Forms.BindingSource advisorBindingSource;
         private ProjectADataSet3TableAdapters.AdvisorTableAdapter advisorTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comDesignation;
+        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.Button btnAddAdvisor;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn designationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

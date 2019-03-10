@@ -32,16 +32,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRegNo = new System.Windows.Forms.TextBox();
+            this.txtFName = new System.Windows.Forms.TextBox();
+            this.txtLName = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDOB = new System.Windows.Forms.DateTimePicker();
+            this.txtGender = new System.Windows.Forms.ComboBox();
+            this.btnAddStudent = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -82,33 +82,33 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Email";
             // 
-            // textBox1
+            // txtRegNo
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtRegNo.Location = new System.Drawing.Point(150, 55);
+            this.txtRegNo.Name = "txtRegNo";
+            this.txtRegNo.Size = new System.Drawing.Size(179, 20);
+            this.txtRegNo.TabIndex = 4;
             // 
-            // textBox2
+            // txtFName
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtFName.Location = new System.Drawing.Point(150, 93);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.Size = new System.Drawing.Size(179, 20);
+            this.txtFName.TabIndex = 5;
             // 
-            // textBox3
+            // txtLName
             // 
-            this.textBox3.Location = new System.Drawing.Point(150, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtLName.Location = new System.Drawing.Point(150, 130);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(179, 20);
+            this.txtLName.TabIndex = 6;
             // 
-            // textBox4
+            // txtContact
             // 
-            this.textBox4.Location = new System.Drawing.Point(150, 171);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtContact.Location = new System.Drawing.Point(150, 171);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(179, 20);
+            this.txtContact.TabIndex = 7;
             // 
             // label5
             // 
@@ -128,37 +128,43 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Gender";
             // 
-            // dateTimePicker1
+            // txtDOB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(150, 210);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(179, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.txtDOB.Location = new System.Drawing.Point(150, 248);
+            this.txtDOB.Name = "txtDOB";
+            this.txtDOB.Size = new System.Drawing.Size(179, 20);
+            this.txtDOB.TabIndex = 12;
             // 
-            // comboBox1
+            // txtGender
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(151, 250);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 13;
+            this.txtGender.FormattingEnabled = true;
+            this.txtGender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.txtGender.Location = new System.Drawing.Point(151, 288);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(178, 21);
+            this.txtGender.Sorted = true;
+            this.txtGender.TabIndex = 13;
+            this.txtGender.Text = "Male";
             // 
-            // button1
+            // btnAddStudent
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(210, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 37);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Add Student";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStudent.Location = new System.Drawing.Point(210, 330);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(102, 37);
+            this.btnAddStudent.TabIndex = 14;
+            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox5
+            // txtEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(151, 288);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(178, 20);
-            this.textBox5.TabIndex = 16;
+            this.txtEmail.Location = new System.Drawing.Point(151, 205);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(178, 20);
+            this.txtEmail.TabIndex = 16;
             // 
             // label7
             // 
@@ -185,23 +191,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 378);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnAddStudent);
+            this.Controls.Add(this.txtGender);
+            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContact);
+            this.Controls.Add(this.txtLName);
+            this.Controls.Add(this.txtFName);
+            this.Controls.Add(this.txtRegNo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Add_Student";
             this.Text = "Add_Student";
+            this.Load += new System.EventHandler(this.Add_Student_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,16 +220,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtRegNo;
+        private System.Windows.Forms.TextBox txtFName;
+        private System.Windows.Forms.TextBox txtLName;
+        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DateTimePicker txtDOB;
+        private System.Windows.Forms.ComboBox txtGender;
+        private System.Windows.Forms.Button btnAddStudent;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
     }

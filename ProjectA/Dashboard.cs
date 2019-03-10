@@ -26,7 +26,15 @@ namespace ProjectA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DatabaseConnection.getInstance().conStr = "Data Source=MALIK\\SQLEXPRESS;Initial Catalog=ProjectA;Integrated Security=True";
+            try
+            {
+                DatabaseConnection.getInstance().getConnection();
+                //MessageBox.Show("Open...");
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error in " + ex.ToString());
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

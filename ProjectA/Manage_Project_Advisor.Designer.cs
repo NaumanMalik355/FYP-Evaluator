@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboAdvisor = new System.Windows.Forms.ComboBox();
+            this.comboProject = new System.Windows.Forms.ComboBox();
+            this.comboRole = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,38 +67,38 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Role";
             // 
-            // comboBox1
+            // comboAdvisor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.comboAdvisor.FormattingEnabled = true;
+            this.comboAdvisor.Location = new System.Drawing.Point(139, 46);
+            this.comboAdvisor.Name = "comboAdvisor";
+            this.comboAdvisor.Size = new System.Drawing.Size(121, 21);
+            this.comboAdvisor.TabIndex = 3;
             // 
-            // comboBox2
+            // comboProject
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(139, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.comboProject.FormattingEnabled = true;
+            this.comboProject.Location = new System.Drawing.Point(139, 89);
+            this.comboProject.Name = "comboProject";
+            this.comboProject.Size = new System.Drawing.Size(121, 21);
+            this.comboProject.TabIndex = 4;
             // 
-            // comboBox3
+            // comboRole
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(139, 129);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 5;
+            this.comboRole.FormattingEnabled = true;
+            this.comboRole.Location = new System.Drawing.Point(139, 129);
+            this.comboRole.Name = "comboRole";
+            this.comboRole.Size = new System.Drawing.Size(121, 21);
+            this.comboRole.TabIndex = 5;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(185, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(185, 171);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 29);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -125,10 +125,10 @@
             this.ClientSize = new System.Drawing.Size(365, 417);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.comboRole);
+            this.Controls.Add(this.comboProject);
+            this.Controls.Add(this.comboAdvisor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -144,10 +144,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboAdvisor;
+        private System.Windows.Forms.ComboBox comboProject;
+        private System.Windows.Forms.ComboBox comboRole;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

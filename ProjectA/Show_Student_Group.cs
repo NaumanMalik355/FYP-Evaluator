@@ -23,5 +23,12 @@ namespace ProjectA
             this.Hide();
             mg.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dashboard da = new Dashboard();
+            this.Hide();
+            da.Show();
+        }
     }
 }

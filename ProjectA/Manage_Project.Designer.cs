@@ -32,19 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtBoxDescription = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.projectADataSet4 = new ProjectA.ProjectADataSet4();
             this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectADataSet4 = new ProjectA.ProjectADataSet4();
+            this.btnAddProject = new System.Windows.Forms.Button();
             this.projectTableAdapter = new ProjectA.ProjectADataSet4TableAdapters.ProjectTableAdapter();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectADataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectADataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,13 +75,13 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // richTextBox1
+            // rtBoxDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(142, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(166, 40);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.rtBoxDescription.Location = new System.Drawing.Point(142, 61);
+            this.rtBoxDescription.Name = "rtBoxDescription";
+            this.rtBoxDescription.Size = new System.Drawing.Size(166, 40);
+            this.rtBoxDescription.TabIndex = 9;
+            this.rtBoxDescription.Text = "";
             // 
             // dataGridView1
             // 
@@ -101,28 +101,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(335, 150);
             this.dataGridView1.TabIndex = 11;
             // 
-            // button1
+            // projectBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(235, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 32);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add Project";
-            this.button1.UseVisualStyleBackColor = true;
+            this.projectBindingSource.DataMember = "Project";
+            this.projectBindingSource.DataSource = this.projectADataSet4;
             // 
             // projectADataSet4
             // 
             this.projectADataSet4.DataSetName = "ProjectADataSet4";
             this.projectADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // projectBindingSource
+            // btnAddProject
             // 
-            this.projectBindingSource.DataMember = "Project";
-            this.projectBindingSource.DataSource = this.projectADataSet4;
+            this.btnAddProject.Location = new System.Drawing.Point(235, 161);
+            this.btnAddProject.Name = "btnAddProject";
+            this.btnAddProject.Size = new System.Drawing.Size(73, 32);
+            this.btnAddProject.TabIndex = 12;
+            this.btnAddProject.Text = "Add Project";
+            this.btnAddProject.UseVisualStyleBackColor = true;
+            this.btnAddProject.Click += new System.EventHandler(this.btnAddProject_Click);
             // 
             // projectTableAdapter
             // 
             this.projectTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(142, 123);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(166, 20);
+            this.txtTitle.TabIndex = 13;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -130,6 +138,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -145,22 +154,15 @@
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
             this.titleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(142, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 13;
-            // 
             // Manage_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 362);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.btnAddProject);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtBoxDescription);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -168,8 +170,8 @@
             this.Text = "Manage_Project";
             this.Load += new System.EventHandler(this.Manage_Project_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectADataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectADataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,15 +182,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtBoxDescription;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddProject;
         private ProjectADataSet4 projectADataSet4;
         private System.Windows.Forms.BindingSource projectBindingSource;
         private ProjectADataSet4TableAdapters.ProjectTableAdapter projectTableAdapter;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
