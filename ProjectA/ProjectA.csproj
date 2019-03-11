@@ -122,6 +122,7 @@
     <Compile Include="Show_Student_Group.Designer.cs">
       <DependentUpon>Show_Student_Group.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student_List.cs" />
     <EmbeddedResource Include="Add_Student.resx">
       <DependentUpon>Add_Student.cs</DependentUpon>
     </EmbeddedResource>

@@ -36,6 +36,7 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Status";
+            this.label1.Visible = false;
             // 
             // comboStatus
             // 
@@ -68,13 +70,18 @@
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(128, 21);
             this.comboStatus.TabIndex = 11;
+            this.comboStatus.Visible = false;
+            this.comboStatus.SelectedIndexChanged += new System.EventHandler(this.comboStatus_SelectedIndexChanged);
             // 
             // txtStudent
             // 
+            this.txtStudent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtStudent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtStudent.Location = new System.Drawing.Point(108, 67);
             this.txtStudent.Name = "txtStudent";
             this.txtStudent.Size = new System.Drawing.Size(128, 20);
             this.txtStudent.TabIndex = 12;
+            this.txtStudent.TextChanged += new System.EventHandler(this.txtStudent_TextChanged);
             // 
             // label2
             // 
@@ -93,15 +100,19 @@
             this.btnAddStudent.TabIndex = 14;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(50, 165);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(271, 139);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnCreate
             // 
@@ -111,12 +122,24 @@
             this.btnCreate.TabIndex = 16;
             this.btnCreate.Text = "Create Group";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(108, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Manage_Student_Group
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 386);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddStudent);
@@ -144,5 +167,6 @@
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

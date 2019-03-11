@@ -153,7 +153,7 @@
             this.btnAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudent.Location = new System.Drawing.Point(210, 330);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(102, 37);
+            this.btnAddStudent.Size = new System.Drawing.Size(119, 37);
             this.btnAddStudent.TabIndex = 14;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;

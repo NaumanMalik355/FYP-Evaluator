@@ -30,5 +30,13 @@ namespace ProjectA
             this.Hide();
             da.Show();
         }
+        DataTable table = new DataTable();
+        private void Show_Student_Group_Load(object sender, EventArgs e)
+        {
+            string query = "select Group1.Id, Group1.Created_On, GroupStudent.GroupId, GroupStudent.StudentId, GroupStudent.Status, GroupStudent.AssignmentDate from Group1 join GroupStudent on Group1.Id=GroupStudent.GroupId";
+            var data = DatabaseConnection.getInstance().getAllData(query);
+            data.Fill(table);
+            dataGridView1.DataSource = table;
+        }
     }
 }
