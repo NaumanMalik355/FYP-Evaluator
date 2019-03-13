@@ -64,5 +64,12 @@ namespace ProjectA
             this.Hide();
             mp.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Manage_Evaluation me = new Manage_Evaluation();
+            this.Hide();
+            me.Show();
+        }
     }
 }

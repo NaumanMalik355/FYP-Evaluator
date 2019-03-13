@@ -30,3 +30,4 @@ F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Manage_Advisor.resources
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Show_Student_Group.resources
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
+F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Manage_Evaluation.resources

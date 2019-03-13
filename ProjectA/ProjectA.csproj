@@ -65,6 +65,12 @@
     <Compile Include="Manage _Student.Designer.cs">
       <DependentUpon>Manage _Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage_Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage_Evaluation.Designer.cs">
+      <DependentUpon>Manage_Evaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage_Project.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectADataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectADataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectADataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Manage_Advisor.cs">
       <SubType>Form</SubType>
@@ -131,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage _Student.resx">
       <DependentUpon>Manage _Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_Evaluation.resx">
+      <DependentUpon>Manage_Evaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage_Project.resx">
       <DependentUpon>Manage_Project.cs</DependentUpon>
@@ -210,6 +224,17 @@
     </None>
     <None Include="ProjectADataSet4.xss">
       <DependentUpon>ProjectADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet5.xsc">
+      <DependentUpon>ProjectADataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectADataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectADataSet5.xss">
+      <DependentUpon>ProjectADataSet5.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
