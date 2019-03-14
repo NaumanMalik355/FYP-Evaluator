@@ -23,7 +23,7 @@ namespace ProjectA
             this.Hide();
             ms.Show();
         }
-        //Male Female
+        
         private void button1_Click(object sender, EventArgs e)
         {
             try

@@ -23,5 +23,10 @@ namespace ProjectA
             this.Hide();
             d.Show();
         }
+
+        private void Manage_Project_Advisor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

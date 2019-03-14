@@ -10,6 +10,11 @@ namespace ProjectA
     {
         public int id { get; set; }
         public string regNo { get; set; }
-        
+
+        //public Student_List(int id)
+        //{
+            
+        //}
+
     }
 }
