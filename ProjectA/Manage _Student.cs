@@ -57,10 +57,25 @@ namespace ProjectA
             this.Hide();
             ds.Show();
         }
-
+        int rowIndex;
+        string id;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 10)
+            if (e.ColumnIndex == 9)
+            {
+                rowIndex = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                id = row.Cells[0].Value.ToString();
+                int idd = int.Parse(id);
+                Add_Student ass = new Add_Student(idd);
+                this.Hide();
+                ass.Show();
+                
+                //int iid = s.id;
+                //MessageBox.Show(iid.ToString());
+            }
+
+            else if (e.ColumnIndex == 10)
             {
 
                 try

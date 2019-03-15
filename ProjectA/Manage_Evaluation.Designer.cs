@@ -45,6 +45,7 @@
             this.evaluationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectADataSet5 = new ProjectA.ProjectADataSet5();
             this.evaluationTableAdapter = new ProjectA.ProjectADataSet5TableAdapters.EvaluationTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.evaluationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectADataSet5)).BeginInit();
@@ -180,11 +181,22 @@
             // 
             this.evaluationTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(329, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Visible = false;
+            // 
             // Manage_Evaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 377);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalMarksDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalWeightageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }

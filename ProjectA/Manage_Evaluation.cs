@@ -28,33 +28,41 @@ namespace ProjectA
         DataTable table = new DataTable();
         private void button1_Click(object sender, EventArgs e)
         {
-            if (isEdit)
-            {
-                try {
-                    //MessageBox.Show(id);
-                    string update = string.Format("update Evaluation set Name='{0}', TotalMarks='{1}', TotalWeightage='{2}' where Id='{3}'", txtName.Text, Convert.ToInt32(txtTotalmarks.Text), Convert.ToInt32(txtObtainedMarks.Text), Convert.ToInt64(id));
-                    DatabaseConnection.getInstance().executeQuery(update);
-                    MessageBox.Show("Data updated successfully...");
-                    txtName.Text = ""; txtTotalmarks.Text = ""; txtObtainedMarks.Text = "";
-                    isEdit=false;
-                }catch(Exception ex)
+            if (txtName.Text!="" && txtTotalmarks.Text!="" && txtObtainedMarks.Text!="") {
+                if (isEdit)
                 {
-                    MessageBox.Show("Error "+ex.Message);
+                    try {
+                        //MessageBox.Show(id);
+                        string update = string.Format("update Evaluation set Name='{0}', TotalMarks='{1}', TotalWeightage='{2}' where Id='{3}'", txtName.Text, Convert.ToInt32(txtTotalmarks.Text), Convert.ToInt32(txtObtainedMarks.Text), Convert.ToInt64(id));
+                        DatabaseConnection.getInstance().executeQuery(update);
+                        MessageBox.Show("Data updated successfully...");
+                        txtName.Text = ""; txtTotalmarks.Text = ""; txtObtainedMarks.Text = "";
+                        isEdit = false;
+                    } catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        string query = string.Format("Insert into Evaluation values('{0}','{1}','{2}')", txtName.Text, Convert.ToInt32(txtTotalmarks.Text), Convert.ToInt32(txtObtainedMarks.Text));
+                        DatabaseConnection.getInstance().executeQuery(query);
+                        MessageBox.Show("Data inserted successfully...");
+                        txtName.Text = ""; txtTotalmarks.Text = ""; txtObtainedMarks.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
                 }
             }
             else
             {
-                try
-                {
-                    string query = string.Format("Insert into Evaluation values('{0}','{1}','{2}')", txtName.Text, Convert.ToInt32(txtTotalmarks.Text), Convert.ToInt32(txtObtainedMarks.Text));
-                    DatabaseConnection.getInstance().executeQuery(query);
-                    MessageBox.Show("Data inserted successfully...");
-                    txtName.Text = ""; txtTotalmarks.Text = ""; txtObtainedMarks.Text = "";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
+                label1.Visible = true;
+                label1.Text = "Please Fill required field...";
+                //MessageBox.Show("asd");
             }
             dataGridView1 = null;
             this.evaluationTableAdapter.Fill(this.projectADataSet5.Evaluation);
@@ -105,7 +113,6 @@ namespace ProjectA
                     txtName.Text = row.Cells[1].Value.ToString();
                     txtTotalmarks.Text = row.Cells[2].Value.ToString();
                     txtObtainedMarks.Text = row.Cells[3].Value.ToString();
-
 
                     isEdit = true;
 

@@ -48,35 +48,43 @@ namespace ProjectA
         DataTable table = new DataTable();
         private void btnAddProject_Click(object sender, EventArgs e)
         {
-            if (isEdit)
+            if (rtBoxDescription.Text!="" && txtTitle.Text!="")
             {
-                string update = "update Project set Description='"+rtBoxDescription.Text+ "',Title='"+txtTitle.Text+"' where Id='"+Convert.ToInt32(id)+"'";
-                DatabaseConnection.getInstance().executeQuery(update);
-                MessageBox.Show("Data inserted Successfully...");
-                isEdit = false;
-            }
+                if (isEdit)
+                {
+                    string update = "update Project set Description='" + rtBoxDescription.Text + "',Title='" + txtTitle.Text + "' where Id='" + Convert.ToInt32(id) + "'";
+                    DatabaseConnection.getInstance().executeQuery(update);
+                    MessageBox.Show("Data inserted Successfully...");
+                    isEdit = false;
+                }
+                else
+                {
+                    try
+                    {
+                        string query = string.Format("insert into Project(Description,Title) values('{0}','{1}')", rtBoxDescription.Text, txtTitle.Text);
+                        DatabaseConnection.getInstance().executeQuery(query);
+                        MessageBox.Show("Data Inserted Successfully...");
+                        //this.Refresh();
+                        //dataGridView1 = null;
+                        //string show = "select * from Project";
+                        //var data = DatabaseConnection.getInstance().getAllData(show);
+                        //data.Fill(table);
+                        //dataGridView1.DataSource = table;
+
+                        dataGridView1 = null;
+                        this.projectTableAdapter.Fill(this.projectADataSet4.Project);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error " + ex.Message);
+                    }
+                } }
             else
             {
-                try
-                {
-                    string query = string.Format("insert into Project(Description,Title) values('{0}','{1}')", rtBoxDescription.Text, txtTitle.Text);
-                    DatabaseConnection.getInstance().executeQuery(query);
-                    MessageBox.Show("Data Inserted Successfully...");
-                    //this.Refresh();
-                    //dataGridView1 = null;
-                    //string show = "select * from Project";
-                    //var data = DatabaseConnection.getInstance().getAllData(show);
-                    //data.Fill(table);
-                    //dataGridView1.DataSource = table;
-
-                    dataGridView1 = null;
-                    this.projectTableAdapter.Fill(this.projectADataSet4.Project);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error " + ex.Message);
-                }
+                label3.Visible = true;
+                label3.Text = "Please fill out required filed...";
             }
+
             dataGridView1 = null;
             this.projectTableAdapter.Fill(this.projectADataSet4.Project);
         }

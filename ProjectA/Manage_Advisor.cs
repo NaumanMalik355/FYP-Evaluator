@@ -53,35 +53,41 @@ namespace ProjectA
             //Random rd = new Random();
             //int increment = rd.Next(1, 100);
             //MessageBox.Show(increment.ToString());
-            if (isEdit)
-            {
-                MessageBox.Show("ads");
-            }
-            else
-            {
-                try
+            if(comDesignation.Text!="" && txtSalary.Text!=""){
+                if (isEdit)
                 {
-                    string countMaxId = string.Format("select max(Id) from Advisor");
-                    var re = DatabaseConnection.getInstance().readData(countMaxId);
-                    int count = 0;
-                    while (re.Read())
+                    MessageBox.Show("ads");
+                }
+                else
+                {
+                    try
                     {
-                        count = re.GetInt32(0);
+                        string countMaxId = string.Format("select max(Id) from Advisor");
+                        var re = DatabaseConnection.getInstance().readData(countMaxId);
+                        int count = 0;
+                        while (re.Read())
+                        {
+                            count = re.GetInt32(0);
+                        }
+                        string query = string.Format("insert into Advisor(Id,Designation,Salary) values('{0}',(select Id from Lookup where Value='{1}'),'{2}')", (count + 1), comDesignation.Text, Convert.ToDecimal(txtSalary.Text));
+                        DatabaseConnection.getInstance().executeQuery(query);
+                        MessageBox.Show("Data Inserted Successfully...");
+                        dataGridView1 = null;
+                        this.advisorTableAdapter.Fill(this.projectADataSet3.Advisor);
                     }
-                    string query = string.Format("insert into Advisor(Id,Designation,Salary) values('{0}',(select Id from Lookup where Value='{1}'),'{2}')", (count + 1), comDesignation.Text, Convert.ToDecimal(txtSalary.Text));
-                    DatabaseConnection.getInstance().executeQuery(query);
-                    MessageBox.Show("Data Inserted Successfully...");
-                    dataGridView1 = null;
-                    this.advisorTableAdapter.Fill(this.projectADataSet3.Advisor);
+                    catch
+                    {
+                        string query = string.Format("insert into Advisor(Id,Designation,Salary) values('{0}',(select Id from Lookup where Value='{1}'),'{2}')", 1, comDesignation.Text, Convert.ToDecimal(txtSalary.Text));
+                        DatabaseConnection.getInstance().executeQuery(query);
+                        MessageBox.Show("Data Inserted Successfully...");
+                        dataGridView1 = null;
+                        this.advisorTableAdapter.Fill(this.projectADataSet3.Advisor);
+                    }
                 }
-                catch
-                {
-                    string query = string.Format("insert into Advisor(Id,Designation,Salary) values('{0}',(select Id from Lookup where Value='{1}'),'{2}')", 1, comDesignation.Text, Convert.ToDecimal(txtSalary.Text));
-                    DatabaseConnection.getInstance().executeQuery(query);
-                    MessageBox.Show("Data Inserted Successfully...");
-                    dataGridView1 = null;
-                    this.advisorTableAdapter.Fill(this.projectADataSet3.Advisor);
-                }
+            }else{
+                label3.Visible = true;
+                label3.Text = "Please fill out the required field..";
+               // MessageBox.Show("asdas");
             }
         }
         int rowIndex;

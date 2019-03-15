@@ -19,7 +19,7 @@ namespace ProjectA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Manage_Student mg = new Manage_Student();
+            Add_Student mg = new Add_Student();
             this.Hide();
             mg.Show();
         }

@@ -44,7 +44,7 @@ namespace ProjectA
             txtStudent.AutoCompleteCustomSource = col;
             con.Close();
         }
-        List<Student_List> list = new List<Student_List>();
+        List<Student> list = new List<Student>();
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
@@ -55,9 +55,9 @@ namespace ProjectA
             {
                 count = (int)re.GetValue(0);
             }
-            Student_List alist = new Student_List();
-            alist.id = count;
-            alist.regNo = txtStudent.Text;
+            Student alist = new Student();
+            alist.Id = count;
+            alist.RegNo = txtStudent.Text;
             list.Add(alist);
             txtStudent.Text = "";
             BindingSource source = new BindingSource();
@@ -90,7 +90,7 @@ namespace ProjectA
             int id;
             for (int i = 0; i < list.Count; i++)
             {
-                id = list[i].id;
+                id = list[i].Id;
                 string query1 = string.Format("insert into GroupStudent(GroupId,StudentId,Status,AssignmentDate) values('{0}','{1}','{2}','{3}')", count,id,4, date);
                 DatabaseConnection.getInstance().executeQuery(query1);
             }
