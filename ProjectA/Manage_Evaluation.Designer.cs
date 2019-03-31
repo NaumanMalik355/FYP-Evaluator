@@ -53,24 +53,25 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(196, 28);
+            this.txtName.Location = new System.Drawing.Point(287, 19);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(127, 20);
             this.txtName.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(235, 146);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(326, 137);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 33);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add Evaluation";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtTotalmarks
             // 
-            this.txtTotalmarks.Location = new System.Drawing.Point(196, 67);
+            this.txtTotalmarks.Location = new System.Drawing.Point(287, 58);
             this.txtTotalmarks.Name = "txtTotalmarks";
             this.txtTotalmarks.Size = new System.Drawing.Size(127, 20);
             this.txtTotalmarks.TabIndex = 4;
@@ -78,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 31);
+            this.label2.Location = new System.Drawing.Point(220, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 3;
@@ -86,7 +87,7 @@
             // 
             // txtObtainedMarks
             // 
-            this.txtObtainedMarks.Location = new System.Drawing.Point(196, 108);
+            this.txtObtainedMarks.Location = new System.Drawing.Point(287, 99);
             this.txtObtainedMarks.Name = "txtObtainedMarks";
             this.txtObtainedMarks.Size = new System.Drawing.Size(127, 20);
             this.txtObtainedMarks.TabIndex = 6;
@@ -94,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 76);
+            this.label3.Location = new System.Drawing.Point(192, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 5;
@@ -103,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 117);
+            this.label4.Location = new System.Drawing.Point(174, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 7;
@@ -111,12 +112,13 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 32);
             this.button2.TabIndex = 19;
             this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
@@ -132,10 +134,10 @@
             this.totalWeightageDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.evaluationBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 185);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 186);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(448, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 192);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -184,10 +186,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(329, 115);
+            this.label1.Location = new System.Drawing.Point(420, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 21;
             this.label1.Visible = false;
             // 
@@ -195,7 +198,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 377);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(642, 378);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -206,6 +210,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtName);
+            this.MaximumSize = new System.Drawing.Size(658, 417);
+            this.MinimumSize = new System.Drawing.Size(658, 417);
             this.Name = "Manage_Evaluation";
             this.Text = "Manage Evaluation";
             this.Load += new System.EventHandler(this.Manage_Evaluation_Load);

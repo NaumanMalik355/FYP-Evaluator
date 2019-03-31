@@ -52,6 +52,12 @@
     <Compile Include="Add_Student.Designer.cs">
       <DependentUpon>Add_Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssignProjectToGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignProjectToGroup.Designer.cs">
+      <DependentUpon>AssignProjectToGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="Group_Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Group_Evaluation.Designer.cs">
+      <DependentUpon>Group_Evaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage _Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectADataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectADataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectADataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectADataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectADataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectADataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectADataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectADataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectADataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Manage_Advisor.cs">
       <SubType>Form</SubType>
@@ -137,8 +169,14 @@
     <EmbeddedResource Include="Add_Student.resx">
       <DependentUpon>Add_Student.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AssignProjectToGroup.resx">
+      <DependentUpon>AssignProjectToGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Group_Evaluation.resx">
+      <DependentUpon>Group_Evaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage _Student.resx">
       <DependentUpon>Manage _Student.cs</DependentUpon>
@@ -235,6 +273,50 @@
     </None>
     <None Include="ProjectADataSet5.xss">
       <DependentUpon>ProjectADataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet6.xsc">
+      <DependentUpon>ProjectADataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectADataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectADataSet6.xss">
+      <DependentUpon>ProjectADataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet7.xsc">
+      <DependentUpon>ProjectADataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectADataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectADataSet7.xss">
+      <DependentUpon>ProjectADataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet8.xsc">
+      <DependentUpon>ProjectADataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectADataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectADataSet8.xss">
+      <DependentUpon>ProjectADataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet9.xsc">
+      <DependentUpon>ProjectADataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectADataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectADataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectADataSet9.xss">
+      <DependentUpon>ProjectADataSet9.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

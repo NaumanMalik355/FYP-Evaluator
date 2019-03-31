@@ -27,12 +27,21 @@ namespace ProjectA
         public string conStr = "Data Source=MALIK\\SQLEXPRESS;Initial Catalog=ProjectA;Integrated Security=True";
         private void Manage_Student_Group_Load(object sender, EventArgs e)
         {
+
             txtStudent.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtStudent.AutoCompleteSource = AutoCompleteSource.CustomSource;
             AutoCompleteStringCollection col = new AutoCompleteStringCollection();
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
-            string sql = "select * from Student";
+            int number=0;
+            string checkExist = "select StudentId from GroupStudent";
+            var exist = DatabaseConnection.getInstance().readData(checkExist);
+            while (exist.Read())
+            {
+                number=(int)exist.GetValue(0);
+
+            }
+            string sql = "select * from Student where Id!='"+number+"'";
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader sdr = null;
             sdr = cmd.ExecuteReader();
@@ -59,10 +68,11 @@ namespace ProjectA
             alist.Id = count;
             alist.RegNo = txtStudent.Text;
             list.Add(alist);
-            txtStudent.Text = "";
+            
             BindingSource source = new BindingSource();
             source.DataSource = list;
             dataGridView1.DataSource = source;
+            //txtStudent.Text = "";
         }
        
         private void txtStudent_TextChanged(object sender, EventArgs e)
@@ -93,8 +103,15 @@ namespace ProjectA
                 id = list[i].Id;
                 string query1 = string.Format("insert into GroupStudent(GroupId,StudentId,Status,AssignmentDate) values('{0}','{1}','{2}','{3}')", count,id,4, date);
                 DatabaseConnection.getInstance().executeQuery(query1);
+                //string delStudent = "delete Student where Id='"+list[i].Id+"'";
+                //DatabaseConnection.getInstance().executeQuery(delStudent);
+                //string delPerson = "delete Person where Id='" + list[i].Id + "'";
+                //DatabaseConnection.getInstance().executeQuery(delPerson);
             }
             dataGridView1.DataSource = null;
+            Show_Student_Group ssg = new Show_Student_Group();
+            this.Hide();
+            ssg.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

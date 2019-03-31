@@ -31,3 +31,5 @@ F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Manage_Advi
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Show_Student_Group.resources
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.Cache
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Manage_Evaluation.resources
+F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Group_Evaluation.resources
+F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.AssignProjectToGroup.resources

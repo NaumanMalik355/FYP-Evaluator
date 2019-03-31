@@ -37,31 +37,32 @@
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentTableAdapter = new ProjectA.ProjectADataSetTableAdapters.StudentTableAdapter();
             this.personBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fKStudentPersonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fKStudentPersonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.projectADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectADataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKStudentPersonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKStudentPersonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(515, 12);
+            this.button1.Location = new System.Drawing.Point(515, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 41);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add Student";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // projectADataSet
@@ -97,11 +98,6 @@
             this.personBindingSource1.DataMember = "Person";
             this.personBindingSource1.DataSource = this.projectADataSetBindingSource;
             // 
-            // fKStudentPersonBindingSource
-            // 
-            this.fKStudentPersonBindingSource.DataMember = "FK_Student_Person";
-            this.fKStudentPersonBindingSource.DataSource = this.personBindingSource;
-            // 
             // personBindingSource2
             // 
             this.personBindingSource2.DataMember = "Person";
@@ -114,12 +110,13 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 32);
             this.button2.TabIndex = 8;
             this.button2.Text = "Home";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
@@ -128,21 +125,29 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 74);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 131);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(635, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 247);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // fKStudentPersonBindingSource
+            // 
+            this.fKStudentPersonBindingSource.DataMember = "FK_Student_Person";
+            this.fKStudentPersonBindingSource.DataSource = this.personBindingSource;
             // 
             // Manage_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 345);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(642, 378);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.MaximumSize = new System.Drawing.Size(658, 417);
+            this.MinimumSize = new System.Drawing.Size(658, 417);
             this.Name = "Manage_Student";
             this.Text = "Manage_Student";
             this.Load += new System.EventHandler(this.Manage_Student_Load);
@@ -151,10 +156,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKStudentPersonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKStudentPersonBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -23,6 +23,7 @@ namespace ProjectA
             this.Hide();
             ads.Show();
         }
+
         DataTable table = new DataTable();
         private void Manage_Student_Load(object sender, EventArgs e)
         {
@@ -30,6 +31,10 @@ namespace ProjectA
             var data = DatabaseConnection.getInstance().getAllData(query);
             data.Fill(table);
             dataGridView1.DataSource = table;
+
+            DataGridViewColumn col = dataGridView1.Columns[2];
+            col.Visible = false;
+
 
             DataGridViewButtonColumn button = new DataGridViewButtonColumn();
             button.Name = "edit";
@@ -57,6 +62,7 @@ namespace ProjectA
             this.Hide();
             ds.Show();
         }
+
         int rowIndex;
         string id;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,14 +76,9 @@ namespace ProjectA
                 Add_Student ass = new Add_Student(idd);
                 this.Hide();
                 ass.Show();
-                
-                //int iid = s.id;
-                //MessageBox.Show(iid.ToString());
             }
-
-            else if (e.ColumnIndex == 10)
+            if (e.ColumnIndex == 10 && DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
-
                 try
                 {
                     string sID = dataGridView1.CurrentRow.Cells["Id"].Value.ToString();
@@ -86,9 +87,8 @@ namespace ProjectA
                     string queryy = string.Format("delete Person where Id='{0}'", Convert.ToInt32(sID));
                     DatabaseConnection.getInstance().executeQuery(queryy);
                     MessageBox.Show("Data deleted successfully...");
-                    //dataGridView1.Update();
                     dataGridView1 = null;
-                     this.Refresh();
+                    this.Refresh();
                     
                     //string queryyy = "select Student.Id, Student.RegistrationNo, Person.Id, Person.FirstName, Person.LastName, Person.Contact, Person.Email, Person.DateOfBirth, Person.Gender from Person join Student on Person.Id=Student.Id";
                     //var data = DatabaseConnection.getInstance().getAllData(queryyy);

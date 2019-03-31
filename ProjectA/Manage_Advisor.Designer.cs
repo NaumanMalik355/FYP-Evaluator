@@ -60,10 +60,10 @@
             this.salaryDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.advisorBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 198);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 166);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(432, 163);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 212);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -105,7 +105,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 77);
+            this.label1.Location = new System.Drawing.Point(170, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
@@ -114,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(97, 116);
+            this.label2.Location = new System.Drawing.Point(197, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 3;
@@ -122,7 +122,6 @@
             // 
             // comDesignation
             // 
-            this.comDesignation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comDesignation.FormattingEnabled = true;
             this.comDesignation.Items.AddRange(new object[] {
             "Professor",
@@ -130,45 +129,49 @@
             "Assisstant Professor",
             "Lecturer",
             "Industry Professional"});
-            this.comDesignation.Location = new System.Drawing.Point(178, 74);
+            this.comDesignation.Location = new System.Drawing.Point(278, 45);
             this.comDesignation.Name = "comDesignation";
             this.comDesignation.Size = new System.Drawing.Size(161, 21);
             this.comDesignation.TabIndex = 4;
+            this.comDesignation.SelectedIndexChanged += new System.EventHandler(this.comDesignation_SelectedIndexChanged);
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(178, 113);
+            this.txtSalary.Location = new System.Drawing.Point(278, 84);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(161, 20);
             this.txtSalary.TabIndex = 5;
             // 
             // btnAddAdvisor
             // 
-            this.btnAddAdvisor.Location = new System.Drawing.Point(257, 149);
+            this.btnAddAdvisor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddAdvisor.Location = new System.Drawing.Point(357, 120);
             this.btnAddAdvisor.Name = "btnAddAdvisor";
             this.btnAddAdvisor.Size = new System.Drawing.Size(82, 27);
             this.btnAddAdvisor.TabIndex = 6;
             this.btnAddAdvisor.Text = "Add Advisor";
-            this.btnAddAdvisor.UseVisualStyleBackColor = true;
+            this.btnAddAdvisor.UseVisualStyleBackColor = false;
             this.btnAddAdvisor.Click += new System.EventHandler(this.btnAddAdvisor_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 32);
             this.button2.TabIndex = 7;
             this.button2.Text = "Home";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(254, 48);
+            this.label3.Location = new System.Drawing.Point(445, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 8;
             this.label3.Visible = false;
             // 
@@ -176,7 +179,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 361);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(642, 378);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAddAdvisor);
@@ -185,6 +189,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximumSize = new System.Drawing.Size(658, 417);
+            this.MinimumSize = new System.Drawing.Size(658, 417);
             this.Name = "Manage_Advisor";
             this.Text = "Manage_Advisor";
             this.Load += new System.EventHandler(this.Manage_Advisor_Load);

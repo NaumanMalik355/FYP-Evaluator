@@ -56,7 +56,14 @@ namespace ProjectA
             if(comDesignation.Text!="" && txtSalary.Text!=""){
                 if (isEdit)
                 {
-                    MessageBox.Show("ads");
+                    string update = "update Advisor set Designation='"+comDesignation.Text+"', Salary='"+txtSalary.Text+"' where Id='"+id+"'";
+                    DatabaseConnection.getInstance().executeQuery(update);
+                    MessageBox.Show("Date updated successfulyy...");
+                    isEdit = false;
+                    dataGridView1 = null;
+                    this.advisorTableAdapter.Fill(this.projectADataSet3.Advisor);
+                    comDesignation.Text = null;
+                    txtSalary.Text = null;
                 }
                 else
                 {
@@ -100,7 +107,28 @@ namespace ProjectA
                     rowIndex = e.RowIndex;
                     DataGridViewRow row = dataGridView1.Rows[rowIndex];
                     id = row.Cells[0].Value.ToString();
-                    comDesignation.Text = row.Cells[1].Value.ToString();
+                    //comDesignation.Text = 
+                    if (row.Cells[1].Value.ToString() == "6")
+                    {
+                        comDesignation.Text = "Professor";
+                    }
+                    else if (row.Cells[1].Value.ToString() == "7")
+                    {
+                        comDesignation.Text = "Associate Professor";
+                    }
+                    else if (row.Cells[1].Value.ToString() == "8")
+                    {
+                        comDesignation.Text = "Assisstant Professor";
+                    }
+                    else if (row.Cells[1].Value.ToString() == "9")
+                    {
+                        comDesignation.Text = "Lecturer";
+                    }
+                    else if (row.Cells[1].Value.ToString() == "10")
+                    {
+                        comDesignation.Text = "Industry Professional";
+                    }
+                    
                     txtSalary.Text = row.Cells[2].Value.ToString();
                     
                     isEdit = true;
@@ -111,7 +139,7 @@ namespace ProjectA
                     MessageBox.Show("Error " + ex.Message);
                 }
             }
-            else if(e.ColumnIndex == 4)
+            else if(e.ColumnIndex == 4 && DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 try
                 {
@@ -128,6 +156,11 @@ namespace ProjectA
                     MessageBox.Show("Error " + ex.Message);
                 }
             }
+        }
+
+        private void comDesignation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

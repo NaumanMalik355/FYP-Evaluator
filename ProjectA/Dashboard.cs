@@ -30,8 +30,8 @@ namespace ProjectA
             try
             {
                 DatabaseConnection.getInstance().getConnection();
-                //MessageBox.Show("Open...");
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error in " + ex.ToString());
             }
@@ -70,6 +70,25 @@ namespace ProjectA
             Manage_Evaluation me = new Manage_Evaluation();
             this.Hide();
             me.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Group_Evaluation ge = new Group_Evaluation();
+            this.Hide();
+            ge.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            AssignProjectToGroup apg = new AssignProjectToGroup();
+            this.Hide();
+            apg.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

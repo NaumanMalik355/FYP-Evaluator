@@ -123,7 +123,7 @@ namespace ProjectA
                 }
             }
             
-            else if(e.ColumnIndex == 5)
+            else if(e.ColumnIndex == 5 && DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 try
                 {

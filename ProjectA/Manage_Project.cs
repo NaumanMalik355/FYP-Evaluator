@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjectA
 {
@@ -46,6 +47,7 @@ namespace ProjectA
         string id;
         bool isEdit;
         DataTable table = new DataTable();
+        string conStr = "Data Source=MALIK\\SQLEXPRESS;Initial Catalog=ProjectA;Integrated Security=True";
         private void btnAddProject_Click(object sender, EventArgs e)
         {
             if (rtBoxDescription.Text!="" && txtTitle.Text!="")
@@ -54,29 +56,37 @@ namespace ProjectA
                 {
                     string update = "update Project set Description='" + rtBoxDescription.Text + "',Title='" + txtTitle.Text + "' where Id='" + Convert.ToInt32(id) + "'";
                     DatabaseConnection.getInstance().executeQuery(update);
-                    MessageBox.Show("Data inserted Successfully...");
+                    MessageBox.Show("Data Updated Successfully...");
                     isEdit = false;
                 }
                 else
                 {
-                    try
+                    SqlConnection con = new SqlConnection(conStr);
+                    SqlCommand checkExist = new SqlCommand("select count(*) from Project where Title=@title", con);
+                    checkExist.Parameters.AddWithValue("@title", txtTitle.Text);
+                    // checkExist.CommandType = System.Data.CommandType.Text;
+                    con.Open();
+                    int asdas = (int)checkExist.ExecuteScalar();
+                    if (asdas > 0)
                     {
-                        string query = string.Format("insert into Project(Description,Title) values('{0}','{1}')", rtBoxDescription.Text, txtTitle.Text);
-                        DatabaseConnection.getInstance().executeQuery(query);
-                        MessageBox.Show("Data Inserted Successfully...");
-                        //this.Refresh();
-                        //dataGridView1 = null;
-                        //string show = "select * from Project";
-                        //var data = DatabaseConnection.getInstance().getAllData(show);
-                        //data.Fill(table);
-                        //dataGridView1.DataSource = table;
-
-                        dataGridView1 = null;
-                        this.projectTableAdapter.Fill(this.projectADataSet4.Project);
+                        label3.Visible = true;
+                        label3.Text = "Project Title Already Exist...";
+                        con.Close();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Error " + ex.Message);
+                        try
+                        {
+                            string query = string.Format("insert into Project(Description,Title) values('{0}','{1}')", rtBoxDescription.Text, txtTitle.Text);
+                            DatabaseConnection.getInstance().executeQuery(query);
+                            MessageBox.Show("Data Inserted Successfully...");
+                            dataGridView1 = null;
+                            this.projectTableAdapter.Fill(this.projectADataSet4.Project);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error " + ex.Message);
+                        }
                     }
                 } }
             else
@@ -110,7 +120,7 @@ namespace ProjectA
                 }
 
             }
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 4 && DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 string sID = dataGridView1.CurrentRow.Cells["idDataGridViewTextBoxColumn"].Value.ToString();
                 string query = "delete Project where Id='" + int.Parse(sID) + "'";

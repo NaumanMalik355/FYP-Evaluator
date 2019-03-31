@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 64);
+            this.label1.Location = new System.Drawing.Point(176, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 126);
+            this.label2.Location = new System.Drawing.Point(209, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 1;
@@ -68,17 +68,18 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 32);
             this.button2.TabIndex = 8;
             this.button2.Text = "Home";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // rtBoxDescription
             // 
-            this.rtBoxDescription.Location = new System.Drawing.Point(142, 61);
+            this.rtBoxDescription.Location = new System.Drawing.Point(269, 28);
             this.rtBoxDescription.Name = "rtBoxDescription";
             this.rtBoxDescription.Size = new System.Drawing.Size(166, 40);
             this.rtBoxDescription.TabIndex = 9;
@@ -96,10 +97,10 @@
             this.titleDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.projectBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 212);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 181);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(335, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 197);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -136,12 +137,13 @@
             // 
             // btnAddProject
             // 
-            this.btnAddProject.Location = new System.Drawing.Point(235, 161);
+            this.btnAddProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddProject.Location = new System.Drawing.Point(362, 128);
             this.btnAddProject.Name = "btnAddProject";
             this.btnAddProject.Size = new System.Drawing.Size(73, 32);
             this.btnAddProject.TabIndex = 12;
             this.btnAddProject.Text = "Add Project";
-            this.btnAddProject.UseVisualStyleBackColor = true;
+            this.btnAddProject.UseVisualStyleBackColor = false;
             this.btnAddProject.Click += new System.EventHandler(this.btnAddProject_Click);
             // 
             // projectTableAdapter
@@ -150,7 +152,7 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(142, 123);
+            this.txtTitle.Location = new System.Drawing.Point(269, 90);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(166, 20);
             this.txtTitle.TabIndex = 13;
@@ -158,10 +160,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(195, 31);
+            this.label3.Location = new System.Drawing.Point(441, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 14;
             this.label3.Visible = false;
             // 
@@ -169,8 +172,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(335, 362);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(642, 378);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.btnAddProject);
@@ -179,6 +182,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(658, 417);
+            this.MinimumSize = new System.Drawing.Size(658, 417);
             this.Name = "Manage_Project";
             this.Text = "Manage_Project";
             this.Load += new System.EventHandler(this.Manage_Project_Load);
