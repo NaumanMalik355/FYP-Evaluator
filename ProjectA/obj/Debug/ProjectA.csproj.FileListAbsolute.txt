@@ -33,3 +33,4 @@ F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.Gene
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Manage_Evaluation.resources
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.Group_Evaluation.resources
 F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.AssignProjectToGroup.resources
+F:\Final Year Management System\ProjectA\ProjectA\obj\Debug\ProjectA.FirstReport.resources

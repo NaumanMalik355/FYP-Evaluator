@@ -31,9 +31,9 @@ namespace ProjectA
             {
                 DatabaseConnection.getInstance().getConnection();
             }
-            catch (Exception ex)
+            catch (Exception err)
             {
-                MessageBox.Show("Error in " + ex.ToString());
+                MessageBox.Show("Error " + err.ToString());
             }
         }
 
@@ -88,7 +88,9 @@ namespace ProjectA
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            FirstReport fr = new FirstReport();
+            this.Hide();
+            fr.Show();
         }
     }
 }

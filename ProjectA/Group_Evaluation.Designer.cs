@@ -49,6 +49,7 @@
             this.groupEvaluationTableAdapter = new ProjectA.ProjectADataSet7TableAdapters.GroupEvaluationTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.projectADataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupStudentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,7 +60,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 36);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(186, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 0;
@@ -68,7 +70,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 75);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(186, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 3;
@@ -77,7 +80,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 118);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(186, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 5;
@@ -85,15 +89,17 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(297, 118);
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(297, 125);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 20);
+            this.textBox3.Size = new System.Drawing.Size(124, 21);
             this.textBox3.TabIndex = 4;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(346, 167);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(346, 178);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 37);
             this.button1.TabIndex = 6;
@@ -103,18 +109,22 @@
             // 
             // comGroupId
             // 
+            this.comGroupId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comGroupId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comGroupId.FormattingEnabled = true;
-            this.comGroupId.Location = new System.Drawing.Point(297, 33);
+            this.comGroupId.Location = new System.Drawing.Point(297, 47);
             this.comGroupId.Name = "comGroupId";
-            this.comGroupId.Size = new System.Drawing.Size(124, 21);
+            this.comGroupId.Size = new System.Drawing.Size(124, 23);
             this.comGroupId.TabIndex = 8;
             // 
             // comEvaluationId
             // 
+            this.comEvaluationId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comEvaluationId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comEvaluationId.FormattingEnabled = true;
-            this.comEvaluationId.Location = new System.Drawing.Point(297, 72);
+            this.comEvaluationId.Location = new System.Drawing.Point(297, 86);
             this.comEvaluationId.Name = "comEvaluationId";
-            this.comEvaluationId.Size = new System.Drawing.Size(124, 21);
+            this.comEvaluationId.Size = new System.Drawing.Size(124, 23);
             this.comEvaluationId.TabIndex = 9;
             // 
             // projectADataSet6
@@ -136,6 +146,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.groupIdDataGridViewTextBoxColumn,
@@ -144,10 +155,10 @@
             this.evaluationDateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.groupEvaluationBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 228);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 221);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 157);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -198,7 +209,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(447, 36);
+            this.label4.Location = new System.Drawing.Point(294, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 16);
             this.label4.TabIndex = 11;
@@ -206,20 +217,33 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 32);
             this.button2.TabIndex = 18;
-            this.button2.Text = "Back";
+            this.button2.Text = "Home";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(164, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(323, 31);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Assign Project to Group";
             // 
             // Group_Evaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(642, 378);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
@@ -233,7 +257,6 @@
             this.MaximumSize = new System.Drawing.Size(658, 417);
             this.MinimumSize = new System.Drawing.Size(658, 417);
             this.Name = "Group_Evaluation";
-            this.Text = "Group_Evaluation";
             this.Load += new System.EventHandler(this.Group_Evaluation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projectADataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupStudentBindingSource)).EndInit();
@@ -267,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluationDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label9;
     }
 }

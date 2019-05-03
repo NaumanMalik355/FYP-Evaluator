@@ -20,6 +20,13 @@ namespace ProjectA
 
         private void Manage_Project_Load(object sender, EventArgs e)
         {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.White;
+
             // TODO: This line of code loads data into the 'projectADataSet4.Project' table. You can move, or remove it, as needed.
             this.projectTableAdapter.Fill(this.projectADataSet4.Project);
 
@@ -44,19 +51,20 @@ namespace ProjectA
             this.Hide();
             d.Show();
         }
+
         string id;
         bool isEdit;
         DataTable table = new DataTable();
         string conStr = "Data Source=MALIK\\SQLEXPRESS;Initial Catalog=ProjectA;Integrated Security=True";
         private void btnAddProject_Click(object sender, EventArgs e)
         {
-            if (rtBoxDescription.Text!="" && txtTitle.Text!="")
+            if (rtBoxDescription.Text != "" && txtTitle.Text != "")
             {
                 if (isEdit)
                 {
                     string update = "update Project set Description='" + rtBoxDescription.Text + "',Title='" + txtTitle.Text + "' where Id='" + Convert.ToInt32(id) + "'";
                     DatabaseConnection.getInstance().executeQuery(update);
-                    MessageBox.Show("Data Updated Successfully...");
+                    MessageBox.Show("Data Updated Successfully!");
                     isEdit = false;
                 }
                 else
@@ -69,8 +77,9 @@ namespace ProjectA
                     int asdas = (int)checkExist.ExecuteScalar();
                     if (asdas > 0)
                     {
+                        txtTitle.Focus();
                         label3.Visible = true;
-                        label3.Text = "Project Title Already Exist...";
+                        label3.Text = "Project Title Already Exists!";
                         con.Close();
                     }
                     else
@@ -79,20 +88,21 @@ namespace ProjectA
                         {
                             string query = string.Format("insert into Project(Description,Title) values('{0}','{1}')", rtBoxDescription.Text, txtTitle.Text);
                             DatabaseConnection.getInstance().executeQuery(query);
-                            MessageBox.Show("Data Inserted Successfully...");
+                            MessageBox.Show("Data Inserted Successfully!");
                             dataGridView1 = null;
                             this.projectTableAdapter.Fill(this.projectADataSet4.Project);
                         }
-                        catch (Exception ex)
+                        catch (Exception err)
                         {
-                            MessageBox.Show("Error " + ex.Message);
+                            MessageBox.Show("Error " + err.Message);
                         }
                     }
-                } }
+                }
+            }
             else
             {
                 label3.Visible = true;
-                label3.Text = "Please fill out required filed...";
+                label3.Text = "Please Fill the Required Field!";
             }
 
             dataGridView1 = null;
@@ -111,12 +121,12 @@ namespace ProjectA
                     id = row.Cells[0].Value.ToString();
                     rtBoxDescription.Text = row.Cells[1].Value.ToString();
                     txtTitle.Text = row.Cells[2].Value.ToString();
-                    
+
                     isEdit = true;
                 }
-                catch (Exception ex)
+                catch (Exception err)
                 {
-                    MessageBox.Show("Error " + ex.Message);
+                    MessageBox.Show("Error " + err.Message);
                 }
 
             }
@@ -125,15 +135,6 @@ namespace ProjectA
                 string sID = dataGridView1.CurrentRow.Cells["idDataGridViewTextBoxColumn"].Value.ToString();
                 string query = "delete Project where Id='" + int.Parse(sID) + "'";
                 DatabaseConnection.getInstance().executeQuery(query);
-                //dataGridView1 = null;
-                // this.Refresh();
-                //this.projectTableAdapter.Fill(this.projectADataSet4.Project);
-                // string show = "select * from Project";
-                // var data = DatabaseConnection.getInstance().getAllData(show);
-                // data.Fill(table);
-                // dataGridView1.DataSource = table;
-
-
             }
         }
     }

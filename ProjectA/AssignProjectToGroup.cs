@@ -23,9 +23,15 @@ namespace ProjectA
         DataTable table = new DataTable();
         private void AssignProjectToGroup_Load(object sender, EventArgs e)
         {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.White;
+
             // TODO: This line of code loads data into the 'projectADataSet8.GroupProject' table. You can move, or remove it, as needed.
             this.groupProjectTableAdapter.Fill(this.projectADataSet8.GroupProject);
-
             string query = "select Title from Project";
             var str = DatabaseConnection.getInstance().getAllData(query);
             str.Fill(table);
@@ -62,7 +68,7 @@ namespace ProjectA
         {
             if (comProjectName.Text != "" && comGroupId.Text != "")
             {
-                string date = DateTime.Now.Date.ToString();
+                string date = DateTime.Now.ToShortDateString();
                 if (isEdit)
                 {
                     try
@@ -74,9 +80,9 @@ namespace ProjectA
                         this.groupProjectTableAdapter.Fill(this.projectADataSet8.GroupProject);
                         comProjectName.Text = ""; comGroupId.Text = "";
                     }
-                    catch (Exception ex)
+                    catch (Exception err)
                     {
-                        MessageBox.Show("Error " + ex.Message);
+                        MessageBox.Show("Error " + err.Message);
                     }
                 }
                 else
@@ -91,7 +97,7 @@ namespace ProjectA
                     if (asdas > 0)
                     {
                         label3.Visible = true;
-                        label3.Text = "Group Already Exist...";
+                        label3.Text = "Group Already Exist";
                         con.Close();
                     }
                     else
@@ -105,16 +111,16 @@ namespace ProjectA
                             this.groupProjectTableAdapter.Fill(this.projectADataSet8.GroupProject);
                             comProjectName.Text = ""; comGroupId.Text = "";
                         }
-                        catch (Exception ex)
+                        catch (Exception err)
                         {
-                            MessageBox.Show("Error " + ex.Message);
+                            MessageBox.Show("Error " + err.Message);
                         }
                     }
                 }
             }
             else
             {
-                label3.Text = "Please Fill out the required Field...";
+                label3.Text = "Please Fill the Required Field";
             }
         }
 
@@ -139,9 +145,9 @@ namespace ProjectA
                     comGroupId.Text = row.Cells[1].Value.ToString();
                     isEdit = true;
                 }
-                catch (Exception ex)
+                catch (Exception err)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(err.Message);
                 }
             }
             if (e.ColumnIndex == 4 && DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
@@ -155,9 +161,9 @@ namespace ProjectA
                     this.groupProjectTableAdapter.Fill(this.projectADataSet8.GroupProject);
                     comGroupId.Text = ""; comProjectName.Text = "";
                 }
-                catch (Exception ex)
+                catch (Exception err)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(err.Message);
                 }
             }
         }

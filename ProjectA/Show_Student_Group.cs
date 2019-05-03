@@ -33,10 +33,23 @@ namespace ProjectA
         DataTable table = new DataTable();
         private void Show_Student_Group_Load(object sender, EventArgs e)
         {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238,239,249);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridView1.BackgroundColor = Color.White;
+
             string query = "select Group1.Id, Group1.Created_On, GroupStudent.GroupId, GroupStudent.StudentId, GroupStudent.Status, GroupStudent.AssignmentDate from Group1 join GroupStudent on Group1.Id=GroupStudent.GroupId";
             var data = DatabaseConnection.getInstance().getAllData(query);
             data.Fill(table);
             dataGridView1.DataSource = table;
+            
+        }
+
+        private void dataGridView1_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            
         }
     }
 }
